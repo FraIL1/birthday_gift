@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 240" fill="none">
   <defs><linearGradient id="fur" x1="39" y1="23" x2="164" y2="214"><stop stop-color="#FFF5DC"/><stop offset="1" stop-color="#EBCBA9"/></linearGradient><linearGradient id="scarf" x1="62" y1="145" x2="155" y2="191"><stop stop-color="#CFB5F5"/><stop offset="1" stop-color="#A883D8"/></linearGradient><filter id="shadow" x="0" y="0" width="220" height="240"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#100B23" flood-opacity=".25"/></filter></defs>
-  <g filter="url(#shadow)">
+  <g>
     <path d="M158 173c32-18 47 5 37 24-7 13-23 16-32 8" stroke="#EAC8A4" stroke-width="15" stroke-linecap="round"/>
     <ellipse cx="108" cy="173" rx="63" ry="52" fill="url(#fur)" stroke="#FFF5E8" stroke-width="3"/>
     <path d="M47 64 43 20c0-6 6-9 11-5l35 27M128 42l35-27c5-4 11-1 11 5l-3 44" fill="url(#fur)" stroke="#FFF5E8" stroke-width="4" stroke-linejoin="round"/>
