@@ -127,7 +127,7 @@
         button.style.setProperty("--i", i);
         button.type = "button";
         button.setAttribute("aria-pressed", String(state.answers[state.index] === option));
-        button.innerHTML = `<span class="option-glyph" aria-hidden="true">${["✦", "✧", "✳", "♡"][i]}</span><span></span>`;
+        button.innerHTML = `<span class="option-glyph" aria-hidden="true">${["✦", "✧", "✦", "♡"][i]}</span><span></span>`;
         button.lastElementChild.textContent = option;
         button.addEventListener("click", () => {
           state.answers[state.index] = option;

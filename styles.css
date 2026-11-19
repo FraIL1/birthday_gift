@@ -171,3 +171,15 @@ h1 em,h2 em{font-weight:400;background:linear-gradient(105deg,#ffdfed 7%,#e5bfe9
 /* Give the italic exclamation mark room beyond its glyph advance. */
 .finale-content h2 em{display:inline-block;padding-right:.18em}
 @media(max-width:690px){.finale-content h2{font-size:clamp(2.45rem,11.5vw,4.2rem)}}
+
+/* Script moves keyboard/screen-reader focus to each new heading. Keep that
+   announcement without drawing Safari's blue focus rectangle around text. */
+h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
+
+/* iOS browsers can rasterize animated SVGs with layered shadows at a low
+   resolution. Keep their tap reactions and page transitions, but let the
+   decorative stickers rest sharply on touch screens. */
+@media (max-width:1024px), (pointer:coarse){
+  .hero-pet,.quiz-mascot,.send-mascot,.finale-mascot,.button-pet,.wipe-inner img{filter:none}
+  .hero-pet,.quiz-mascot:not(.celebrating),.send-mascot,.finale-mascot{animation:none}
+}
