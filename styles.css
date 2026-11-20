@@ -183,3 +183,21 @@ h1[tabindex="-1"]:focus,h2[tabindex="-1"]:focus{outline:none}
   .hero-pet,.quiz-mascot,.send-mascot,.finale-mascot,.button-pet,.wipe-inner img{filter:none}
   .hero-pet,.quiz-mascot:not(.celebrating),.send-mascot,.finale-mascot{animation:none}
 }
+
+/* The two companions perch on the first and last letters of her name. */
+.birthday-name{display:block;padding-top:clamp(76px,9vw,132px);margin-bottom:.08em;color:#ffe3f1;font-size:.86em;line-height:1.08;letter-spacing:-.045em;white-space:nowrap}
+.birthday-letter{position:relative;display:inline-block}
+.birthday-greeting{display:block}
+.birthday-pet{position:absolute;left:50%;bottom:78%;width:clamp(76px,9vw,124px);height:auto;max-width:none;pointer-events:none;user-select:none}
+.birthday-pet-cat{transform:translateX(-50%) rotate(-8deg);animation:catLetterHop 3.1s ease-in-out infinite}
+.birthday-pet-bunny{transform:translateX(-50%) rotate(7deg);animation:bunnyLetterHop 3.1s ease-in-out -1.55s infinite}
+@keyframes catLetterHop{0%,17%,45%,100%{bottom:78%}27%{bottom:calc(78% + 28px)}35%{bottom:calc(78% + 5px)}54%{bottom:calc(78% + 14px)}64%{bottom:78%}}
+@keyframes bunnyLetterHop{0%,19%,50%,100%{bottom:78%}30%{bottom:calc(78% + 32px)}40%{bottom:calc(78% + 4px)}60%{bottom:calc(78% + 17px)}72%{bottom:78%}}
+@keyframes finaleTitlePop{0%{opacity:0;transform:scale(.88) translateY(18px)}65%{opacity:1;transform:scale(1.025) translateY(0)}100%{transform:scale(1) translateY(0)}}
+.screen-finale h2{animation:finaleTitlePop .8s .32s both}
+@media(max-width:690px){
+  .birthday-name{padding-top:68px;margin-bottom:.12em;font-size:.92em}
+  .birthday-pet{width:clamp(60px,16vw,76px)}
+}
+@media(max-width:390px){.birthday-name{padding-top:61px}.birthday-pet{width:59px}}
+@media(prefers-reduced-motion:reduce){.birthday-pet,.screen-finale h2{animation:none}}
