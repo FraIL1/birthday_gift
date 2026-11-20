@@ -30,7 +30,7 @@
       label: "МАЛЕНЬКИЕ РАДОСТИ",
       title: "Что почти всегда заставляет тебя улыбнуться?",
       hint: "Даже когда день начался не идеально.",
-      options: ["Котики", "Что-нибудь вкусное", "Неожиданное сообщение", "Объятия и поцелуи"],
+      options: ["Котики", "Что-нибудь вкусное", "Неожиданное сообщение", "Объятия и нежные поцелуи"],
     },
     {
       label: "КОГДА НУЖНО ЧУТЬ БОЛЬШЕ ТЕПЛА",
@@ -60,7 +60,6 @@
   let wiping = false;
 
   function pressThen(button, callback) {
-    if (document.documentElement.classList.contains("motion-off")) { callback(); return; }
     button.classList.remove("is-hopping");
     void button.offsetWidth;
     button.classList.add("is-hopping");
@@ -69,7 +68,6 @@
 
   function runWipe(callback) {
     if (wiping) return;
-    if (document.documentElement.classList.contains("motion-off")) { callback(); return; }
     wiping = true;
     const wipe = $("#scene-wipe");
     wipe.classList.remove("play");
@@ -203,7 +201,6 @@
   }
 
   function celebrate() {
-    if (document.documentElement.classList.contains("motion-off")) return;
     const tray = $("#confetti");
     tray.replaceChildren();
     const colors = ["#f5c8e4", "#e8c994", "#caa8f1", "#ffffff", "#f2aeb7"];
@@ -229,11 +226,6 @@
   $("#open-button").addEventListener("click", () => pressThen($("#open-button"), () => transitionTo("finale")));
   $("#retry-button").addEventListener("click", sendAnswers);
   $("#replay-button").addEventListener("click", () => { state.index = 0; state.answers.fill(""); state.sent = false; $("#send-status").textContent = ""; $("#retry-button").hidden = true; transitionTo("intro"); });
-  $("#motion-toggle").addEventListener("click", () => {
-    const off = document.documentElement.classList.toggle("motion-off");
-    $("#motion-toggle").textContent = `Анимации: ${off ? "выкл" : "вкл"}`;
-    $("#motion-toggle").setAttribute("aria-pressed", String(!off));
-  });
   setSendMode();
   decorate();
 })();
